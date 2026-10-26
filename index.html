@@ -3,30 +3,104 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index,follow" />
   <title>QRpybara Legal</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 40px 20px;
-      line-height: 1.6;
-      color: #111;
-    }
-    h1 { margin-bottom: 8px; }
-    p { color: #444; }
-    a {
-      display: block;
-      margin: 18px 0;
-      font-size: 18px;
-    }
-  </style>
+:root{
+  color-scheme: light dark;
+  --bg:#ffffff;
+  --text:#151515;
+  --muted:#5f6368;
+  --card:#f6f7f8;
+  --border:#e1e4e8;
+  --link:#0969da;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0d1117;
+    --text:#e6edf3;
+    --muted:#9da7b1;
+    --card:#161b22;
+    --border:#30363d;
+    --link:#58a6ff;
+  }
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:Arial,Helvetica,sans-serif;
+  line-height:1.65;
+}
+main{
+  max-width:900px;
+  margin:0 auto;
+  padding:44px 22px 72px;
+}
+nav{
+  margin-bottom:32px;
+  padding-bottom:18px;
+  border-bottom:1px solid var(--border);
+}
+nav a{margin-right:18px}
+h1{font-size:2.1rem;line-height:1.2;margin:0 0 8px}
+h2{margin-top:34px;font-size:1.35rem}
+h3{margin-top:24px}
+p,li{font-size:1rem}
+.muted{color:var(--muted)}
+.notice{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:16px 18px;
+  margin:24px 0;
+}
+a{color:var(--link)}
+.button{
+  display:inline-block;
+  padding:12px 18px;
+  border-radius:10px;
+  background:var(--link);
+  color:white;
+  text-decoration:none;
+  font-weight:700;
+}
+footer{
+  margin-top:44px;
+  padding-top:20px;
+  border-top:1px solid var(--border);
+  color:var(--muted);
+  font-size:.95rem;
+}
+</style>
 </head>
 <body>
-  <h1>QRpybara Legal</h1>
-  <p>Legal information for QRpybara: QR & Barcode Scanner.</p>
+<main>
 
+<nav>
+  <a href="index.html">Home</a>
   <a href="privacy.html">Privacy Policy</a>
   <a href="terms.html">Terms of Service</a>
+  <a href="delete-account.html">Delete Account</a>
+</nav>
+<h1>QRpybara Legal</h1>
+<p class="muted">Legal and privacy information for QRpybara: QR &amp; Barcode Scanner.</p>
+
+<div class="notice">
+  <p><strong>Developer:</strong> asuzsoftware</p>
+  <p><strong>Support:</strong> <a href="mailto:asuzsoftware@gmail.com">asuzsoftware@gmail.com</a></p>
+</div>
+
+<h2>Legal Documents</h2>
+<ul>
+  <li><a href="privacy.html">Privacy Policy</a></li>
+  <li><a href="terms.html">Terms of Service</a></li>
+  <li><a href="delete-account.html">Account &amp; Data Deletion</a></li>
+</ul>
+
+<footer>QRpybara: QR &amp; Barcode Scanner</footer>
+
+</main>
 </body>
 </html>
