@@ -85,7 +85,7 @@ footer{
   <a href="delete-account.html">Delete Account</a>
 </nav>
 <h1>Privacy Policy for QRpybara</h1>
-<p class="muted"><strong>Last updated:</strong> November 4, 2026</p>
+<p class="muted"><strong>Last updated:</strong> November 5, 2026</p>
 
 <div class="notice">
   QRpybara: QR &amp; Barcode Scanner ("QRpybara", "the app", "we", "us", or "our") is provided by
@@ -95,95 +95,87 @@ footer{
 </div>
 
 <h2>1. Information QRpybara May Access</h2>
-
-<h3>Camera</h3>
-<p>QRpybara uses your device camera to scan QR codes and barcodes. Camera access is used only when scanning is required. QRpybara does not continuously record video in the background.</p>
-
-<h3>Photos Selected by You</h3>
-<p>QRpybara can scan QR codes from images you explicitly select through the Android system photo picker. The app does not require broad access to your entire photo library for this feature.</p>
+<h3>Camera and Photos</h3>
+<p>QRpybara uses the camera to scan QR codes and barcodes when you choose to scan. It does not continuously record video in the background. If you select an image from the Android photo picker for gallery scanning, its QR/barcode contents are decoded on your device. We do not upload camera frames, selected photos, or decoded image data to a QRpybara server as part of scanning.</p>
 
 <h3>Location</h3>
-<p>QRpybara may request foreground location access for specific features.</p>
-<p><strong>Approximate location</strong> may be used, with your permission, in Product scanning to identify your country and offer more relevant local marketplace results. Location permission is optional for barcode scanning. If you skip or deny it, scanning continues and QRpybara may use the app language or device locale as a fallback market.</p>
-<p><strong>Precise location</strong> is requested only when you explicitly use features such as "Use My Location" while creating a Coordinates or Location QR code.</p>
-<p>QRpybara does not request background location and does not continuously track your location.</p>
+<p>QRpybara may request optional foreground approximate or precise location access for product-related features and for location/coordinates QR creation. With permission, location may help determine the user's country or open a nearby-store search. If permission is denied, ordinary scanning still works and the app may use your language or device locale to select a market.</p>
+<p>The Android system <strong>Geocoder</strong> may process coordinates to resolve a country or address. Depending on the device and system implementation, that operation may involve a device-provided network geocoding service. When you explicitly open a nearby-store result or map, the app may place sufficiently precise coordinates and a store-search term in a <strong>Google Maps</strong> link. That link is opened by an external service, whose data practices apply. The app does not add GPS coordinates to its product-catalog or price-offer API requests.</p>
+<p>If you create a location QR code, coordinates or an address may be incorporated into the QR content you generate. QR content remains local unless you explicitly choose to open, search for, or share it with another app or service. QRpybara does not request background location and does not continuously track your movements.</p>
+<p>Separately, if you enable optional Firebase Analytics, it may derive approximate geographic information from technical request data such as an IP address. This is independent of the Android location permission.</p>
 
-<h3>QR Codes and Barcodes</h3>
-<p>QRpybara processes scanned and generated QR codes and barcodes to provide app functionality. Depending on the code type, this may include URLs, product barcodes, Wi-Fi information, contact information, email addresses, coordinates, text, and social profile links.</p>
-<p>Most QR creation and history functionality is processed and stored locally on your device.</p>
+<h3>QR Codes, Barcodes, Wi-Fi and Contacts</h3>
+<p>QRpybara reads, generates and locally stores QR/barcode content. Depending on what you choose to scan or create, this can include URLs, product codes, plain text, Wi-Fi network names and passwords, contact details, coordinates, phone numbers and email addresses. History, notes, saved items and generated codes are stored in account-specific local storage, not routinely uploaded to a QRpybara server.</p>
+<p>When you choose an Android action, such as connecting to Wi-Fi, adding a contact, opening a URL, launching a map, sharing a generated code or sending an email, relevant information is provided to the Android feature or app you selected. Those third-party apps may handle that information according to their own privacy policies.</p>
+<p>QRpybara does not intentionally include Wi-Fi passwords, full contact-card contents, or complete QR payloads in custom Firebase Analytics events or Crashlytics parameters. Avoid sharing QR codes containing sensitive information unless you trust the recipient.</p>
 
-<h3>Wi-Fi Information</h3>
-<p>When you create or scan a Wi-Fi QR code, QRpybara may process the network name (SSID), security type, and Wi-Fi password. This information is used to display decoded network information and to request connection through Android Wi-Fi system features.</p>
-<p>QRpybara does not intentionally send Wi-Fi passwords to analytics or crash-reporting systems.</p>
-
-<h3>Contact Information</h3>
-<p>When creating or scanning a contact QR code, QRpybara may process information you provide, such as full name, phone number, and email address. Contact QR data is used to generate or decode standards-compatible contact information and may be passed to the Android Contacts interface when you choose to add a contact.</p>
-
-<h3>Product Information and Online Searches</h3>
-<p>When you scan a product barcode, QRpybara may send the barcode number or a related product query to third-party product-information services to identify the product and locate available offers.</p>
-<p>If you choose to open a merchant, marketplace, or search-engine result, the relevant search or product information may be sent to that external service. Third-party websites and services operate under their own privacy policies.</p>
+<h3>Product Lookup, Price Comparison and External Search</h3>
+<p>When QRpybara identifies a product barcode or retrieves prices, the product code (for example, a UPC, EAN, GTIN or ISBN) may be transmitted to a product-data provider. Depending on the request and product category, providers can include <strong>Open Food Facts</strong>, <strong>Open Beauty Facts</strong>, <strong>Open Library</strong> and <strong>UPCitemdb</strong>. An automatic catalog lookup may occur after scanning a recognized product code when a local result is unavailable. These requests do not include your Firebase UID or GPS coordinates.</p>
+<p>If you choose a marketplace or search-engine action, QRpybara may pass a barcode, product name, selected search text, or scanned text as a query to that external service. The provider may process request metadata, including an IP address, and may retain server logs under its own rules. QRpybara does not control the retention policies of independent catalog, search or marketplace providers.</p>
 
 <h2>2. Google Sign-In and Account Information</h2>
-<p>When you choose to connect a Google account, QRpybara uses Google Sign-In and Firebase Authentication. The app receives a Firebase account identifier and basic Google account details made available through sign-in, which can include an email address or display name. Your email does not need to be shown in Settings for authentication to work.</p>
-<p>When you sign in, your Firebase user identifier can be used as the RevenueCat App User ID to help verify and maintain Premium access. Guest use relies on an anonymous app-specific session identity. Connecting Google does not change which Google Play account owns a store transaction; legitimate purchase recovery may require the in-app Restore Purchases action.</p>
+<p>You may use basic scanning without connecting a Google account. When you choose <strong>Continue with Google</strong>, QRpybara uses Google Sign-In and Firebase Authentication. Firebase may receive and retain a user ID, email address and available Google profile information, including your display name or profile-photo URL. Google handles your Google account password; QRpybara does not ask you to enter it into an app-controlled password form.</p>
+<p>A Firebase UID identifies your connected account and may be used as the RevenueCat App User ID to retrieve that account's Premium status. Guest sessions use a separate anonymous app-specific RevenueCat identity. Signing out ends the current app session but does not delete the Google account, its purchase records or its subscription.</p>
+<p>Local history, saved products, lists and other account-associated local content use separate storage scopes to help prevent one account's records from appearing under another account. Where historical local records have no account ownership information, attribution can be limited; those records are not automatically assigned to an unrelated new account.</p>
 
 <h2>3. Purchases and Premium Access</h2>
-<p>QRpybara may offer Weekly Premium, Yearly Premium, and Lifetime Premium.</p>
-<p>Purchases on Android are processed through Google Play. QRpybara uses RevenueCat to validate and manage access to active subscriptions and Lifetime Premium purchases.</p>
-<p>Purchase-management services may process an app user identifier, product purchased, subscription status, entitlement status, and transaction-related identifiers.</p>
-<p>QRpybara does not directly receive or store your full payment-card details.</p>
+<p>QRpybara may offer Weekly Premium, Yearly Premium and Lifetime Premium access. Google Play processes Android purchases, while RevenueCat manages purchase verification and entitlement status. These services may receive app/user identifiers, product IDs, purchase tokens, transaction information, subscription status, expiration dates and promotional entitlement details.</p>
+<p>QRpybara does not receive or store full payment-card numbers. A promotional Premium grant is not necessarily a recurring paid subscription. Signing out, deleting a QRpybara account or uninstalling the app does not automatically cancel a Google Play subscription. Manage or cancel any active subscription separately in Google Play.</p>
 
 <h2>4. Advertising</h2>
-<p>QRpybara's current Android release does not display third-party advertisements to Free or Premium users. The release does not initialize Google Mobile Ads or request AdMob advertisements, and it does not use Google UMP to collect advertising consent.</p>
-<p>QRpybara's in-app Premium subscription and one-time purchase offers are part of the app's own purchase experience, not advertisements served by a third-party advertising network. We do not use the optional analytics and crash-diagnostics controls to authorize advertising. If advertising is introduced in a future release, we will update this policy and applicable consent and Google Play disclosures before enabling it.</p>
+<p><strong>The current QRpybara Android v14 release does not display third-party advertising.</strong> It does not include an active advertising SDK or serve banner, interstitial or rewarded ads, whether you are a Free or Premium user. Our own Premium purchase options are part of the app's subscription functionality, not third-party advertisements.</p>
+<p>Optional Analytics and Optional Crash Diagnostics are not advertising-consent controls. If a future version adds advertising, we will update this policy and applicable disclosures before that functionality is enabled.</p>
 
 <h2>5. Local Storage and Retention</h2>
-<p>QRpybara stores certain app information locally on your device, including settings, scan history, generated QR records, saved items, and related preferences.</p>
-<p>Some unsaved or temporary records may automatically expire after approximately 30 days. Items you explicitly save may remain until you delete them, reset the app's local data, or uninstall the app.</p>
+<p>QRpybara stores settings, scan history, generated QR records, notes, lists, saved products and product-information caches locally on the device, with account-specific separation where supported. Some unsaved or temporary history may be deleted automatically after approximately 30 days. Items explicitly saved by you can remain until you delete them or remove the relevant local app data.</p>
+<p>Google/Firebase authentication records and RevenueCat purchase/entitlement records are maintained by the relevant services, not simply in local scan history. Product providers may retain request metadata or logs according to their own privacy policies. Retention of optional Analytics and Crashlytics records is governed by the relevant provider settings and retention policies; disabling further collection does not necessarily erase previously transmitted records.</p>
 
 <h2>6. Optional Analytics, Crash Diagnostics, and Scanner SDK Data</h2>
-<p>QRpybara offers two separate settings in <strong>Settings &gt; Data Processing</strong>: <strong>Optional Analytics</strong> and <strong>Optional Crash Diagnostics</strong>. Your choices are stored on your device, may be changed independently, and are restored when you reopen the app. These settings control the corresponding optional Firebase data-collection functions; they do not disable information required to provide requested account, purchase, product-search, or scanner services.</p>
+<p>QRpybara provides two independent options in <strong>Settings &gt; Data Processing</strong>: <strong>Optional Analytics</strong> and <strong>Optional Crash Diagnostics</strong>. They are disabled by default in a fresh installation and can be changed separately. These choices apply to their respective Firebase collection functions, not to information necessary for account authentication, Premium purchase verification, product lookups or operation of the barcode scanning SDK.</p>
 
 <h3>Optional Analytics</h3>
-<p>If you enable Optional Analytics, Google Analytics for Firebase may process usage events and related technical information, such as app interactions, app and device characteristics, operating-system information, and app or installation identifiers, to help us understand and improve the app. If you disable this option, the app applies the corresponding Firebase Analytics collection setting for future collection. Turning it off does not automatically delete data previously received by a service provider.</p>
+<p>When enabled, <strong>Google Analytics for Firebase</strong> may collect app interactions and usage events, app and device information, installation/app-instance identifiers and approximate geographic information derived from technical request data such as IP addresses. A QRpybara feature event may contain a feature name and outcome, such as whether a price-comparison request succeeded, rather than the full contents of the scanned code. You can turn off this optional collection in Settings. Previously transmitted data may remain with the provider under its retention rules.</p>
 
 <h3>Optional Crash Diagnostics</h3>
-<p>If you enable Optional Crash Diagnostics, Firebase Crashlytics may receive crash reports and diagnostics including error types, stack traces, app version, device model and operating-system information, timestamps, and Firebase/Crashlytics installation or session identifiers. This information is used to investigate crashes and improve reliability. Changes to automatic Crashlytics reporting, including disabling it, may require restarting QRpybara to take effect. Disabling reporting does not retroactively delete reports previously transmitted. Depending on the SDK's behavior, unsent crash information may be retained locally and transmitted if you later enable reporting.</p>
+<p>When enabled, <strong>Firebase Crashlytics</strong> may collect crash logs, stack traces, diagnostic and device information, app version, operating-system version, timestamps and related installation/session identifiers. Changes to automatic Crashlytics collection, especially disabling it, may require an app restart to take full effect. Previously sent reports are not automatically removed merely because the setting is switched off.</p>
 
-<h3>Barcode Scanning and ML Kit</h3>
-<p>QRpybara uses barcode/QR scanning components including Google ML Kit. Google states that ML Kit processes scan input such as images and video on the device and does not send that input or the decoded result to its servers as part of ML Kit processing. However, ML Kit may contact Google for technical updates, fixes, or compatibility information and may send API performance and usage metrics to Google for operation, maintenance, improvement, and abuse prevention. These SDK-level operational metrics are distinct from the optional Firebase Analytics and Crash Diagnostics settings.</p>
-<p>We do not intentionally include decoded Wi-Fi passwords, complete QR contents, contact-card contents, or precise location coordinates in custom analytics events or crash-report parameters. If you request a product lookup or open an external result, barcode numbers or related search terms may be sent to third-party product-information or marketplace services as described in Section 1.</p>
+<h3>Google ML Kit Barcode Scanning</h3>
+<p>QRpybara uses <strong>Google ML Kit</strong> to scan QR codes and barcodes. According to Google's SDK disclosures, scan images and decoded results are processed on-device for the barcode scanning function rather than sent to Google as scan content. However, ML Kit may send operational information such as API usage events, device and app characteristics, latency/performance measurements, technical identifiers and update/compatibility requests for service operation, maintenance, improvement or abuse prevention. These SDK-level transmissions are not controlled by the Optional Analytics or Optional Crash Diagnostics toggles.</p>
+
+<h3>Required Identifiers and Technical Data</h3>
+<p>Firebase components, RevenueCat, Google Play Billing and ML Kit may process user IDs, installation/app identifiers, purchase-related metadata and technical information necessary to operate their services. Not every technical identifier is an advertising identifier; the current release is not configured to collect an advertising ID for ad serving.</p>
 
 <h2>7. Third-Party Services and Information Sharing</h2>
-<p>QRpybara does not sell your personal information. Depending on the features you use and the optional settings you enable, information may be processed by the following services:</p>
+<p>We do not sell personal information. Depending on your actions and optional settings, data may be processed by:</p>
 <ul>
-  <li><strong>Google Sign-In and Firebase Authentication:</strong> sign-in credentials or tokens, account identifiers, and permitted basic profile details for optional Google account connection and account management.</li>
-  <li><strong>Google Play and RevenueCat:</strong> purchase-related identifiers, subscription or one-time purchase details, and Premium entitlement status for billing and access verification.</li>
-  <li><strong>Firebase Analytics:</strong> optional app usage and technical event information when Optional Analytics is enabled.</li>
-  <li><strong>Firebase Crashlytics:</strong> optional crash and device diagnostics when Optional Crash Diagnostics is enabled, subject to the restart behavior described in Section 6.</li>
-  <li><strong>Google ML Kit:</strong> technical API usage and performance metrics, and requests for SDK updates or compatibility support. QR/barcode image input is processed on-device by ML Kit.</li>
-  <li><strong>Product-information and marketplace providers:</strong> barcode numbers or search terms when you request product identification, product prices, or relevant online results.</li>
-  <li><strong>External services you choose to open:</strong> merchants, maps, browsers, email apps, search engines, and supported Android system features, according to the action you select and the external provider's privacy practices.</li>
+  <li><strong>Google Sign-In and Firebase Authentication:</strong> authentication, account identifiers and permitted basic profile information.</li>
+  <li><strong>Google Play Billing and RevenueCat:</strong> purchase-related identifiers, subscription status, transaction and Premium entitlement information.</li>
+  <li><strong>Firebase Analytics:</strong> optional usage analytics and related technical data if enabled.</li>
+  <li><strong>Firebase Crashlytics:</strong> optional crash reports and diagnostics if enabled, subject to the restart behavior described above.</li>
+  <li><strong>Google ML Kit:</strong> scanner SDK operational, usage and performance measurements, independently of the Firebase consent toggles.</li>
+  <li><strong>Android system location/geocoding services and Google Maps:</strong> location or coordinates as described in Section 1 when you allow or initiate relevant location and map features.</li>
+  <li><strong>Open Food Facts, Open Beauty Facts, Open Library and UPCitemdb:</strong> barcode/ISBN product lookup or price-offer queries and the associated request metadata.</li>
+  <li><strong>External apps and services that you choose:</strong> merchants, online marketplaces, search engines, browsers, Wi-Fi, contacts, email and Android share targets, to carry out the action you select.</li>
 </ul>
-<p>Service providers may process some data outside your country. Their independent processing and retention obligations may differ from QRpybara's.</p>
+<p>Some providers act on our behalf as service providers; others may independently handle the data associated with a search, map or marketplace request. Their privacy notices govern their independent practices. Providers may process data in countries other than your own.</p>
 
 <h2>8. Your Choices and Privacy Requests</h2>
-<p>You can use basic scanning as a Guest without connecting a Google account. Location access is optional for ordinary barcode scanning. You can decline other optional permissions, although features that specifically need them may be limited. You can control Optional Analytics and Optional Crash Diagnostics separately in Settings &gt; Data Processing, subject to the reporting and restart limitations described in Section 6.</p>
-<p>You may contact <a href="mailto:asuzsoftware@gmail.com">asuzsoftware@gmail.com</a> to request information about data associated with your account, correction where applicable, or account and data deletion. We may request reasonable verification to protect against unauthorized disclosure or deletion. Available rights depend on applicable law.</p>
+<p>Basic scanning is available without Google Sign-In. You may choose not to provide optional Android location access or enable the optional Analytics and Crash Diagnostics controls. Declining a permission can limit the feature that depends on it, but does not prevent ordinary scanning. Some scanner, account and purchase services necessarily process operational data to function.</p>
+<p>You can manage <strong>Optional Analytics</strong> and <strong>Optional Crash Diagnostics</strong> separately in Settings &gt; Data Processing. You can sign out without deleting your account. Where applicable law provides rights to access, correct, object to or request deletion of your information, contact <a href="mailto:asuzsoftware@gmail.com">asuzsoftware@gmail.com</a>. We may need to verify your authority before acting.</p>
 
 <h2>9. Security</h2>
-<p>We use reasonable technical and organizational measures designed to protect information handled by QRpybara. However, no electronic storage or transmission method can be guaranteed to be completely secure.</p>
-<p>Users should take appropriate care before creating, saving, copying, or sharing QR codes containing passwords, contact information, locations, or other sensitive information.</p>
+<p>We use reasonable technical and organizational safeguards. QRpybara's app-controlled network calls for product lookups and account services use HTTPS/TLS, and the application's Android configuration does not permit cleartext app traffic. Third-party applications you choose to open and some device-provided system services have their own connection and security practices, which we do not control. No method of transmission or storage is guaranteed perfectly secure.</p>
+<p>Keep QR codes containing Wi-Fi passwords, contacts, locations or other sensitive material secure, and share them only with intended recipients.</p>
 
 <h2>10. Account and Data Deletion</h2>
-<p>QRpybara provides in-app account/data deletion controls for Google-connected and Guest use, according to the relevant account or local-data state. You can also request account and associated data deletion without reinstalling the app through the external page below or by contacting our support address. If you use a Guest session, explain that you are a Guest user in your request; a Google account email is not required. We may need additional non-sensitive information to identify the relevant account or data and verify your authority to request its deletion.</p>
-<p><a href="delete-account.html"><strong>QRpybara Account &amp; Data Deletion</strong></a></p>
-<p>Once a verified deletion request has been completed, account data controlled by QRpybara and associated with that account is deleted, subject to limited retention necessary for security, fraud prevention, dispute resolution, or legal compliance. Some purchase and diagnostic records may be retained separately by their respective service providers under their own retention obligations.</p>
-<p>Data stored only locally on your device can be removed using QRpybara's deletion/reset controls, Android system settings, or by uninstalling the app. Uninstalling does not itself cancel Google Play purchases or delete every record held by third-party providers.</p>
-<p>Deleting a QRpybara account does not automatically cancel an active Google Play subscription. To stop future subscription charges, you must also cancel the subscription through Google Play.</p>
+<p>QRpybara provides an in-app <strong>Delete Account</strong> process for eligible account/session states. For Google-connected accounts, this can include deleting the associated Firebase authentication identity and requesting deletion of the matching RevenueCat customer records, subject to verification and service availability. Account-specific local application data is also cleared as part of the applicable deletion flow.</p>
+<p>You can additionally request account and associated data deletion without access to the app using our public page: <a href="delete-account.html"><strong>QRpybara Account &amp; Data Deletion</strong></a>, or by emailing <a href="mailto:asuzsoftware@gmail.com">asuzsoftware@gmail.com</a>. Please state whether you used Google sign-in or Guest. Do not send your Google password, payment-card details or other unnecessary sensitive information. We may need reasonable identity/ownership verification before processing a request.</p>
+<p>Deleting your account is separate from signing out. Sign Out does not delete your account or purchases. Uninstalling the app generally removes local app data but does not necessarily delete provider-held authentication, transaction or technical records.</p>
+<p>We delete data under our control that is associated with a successfully verified and completed deletion request, except for information that must be retained for legitimate security, fraud prevention, dispute handling or legal compliance. Independent service providers may retain transaction, diagnostics, operational or legally required records according to their own policies and applicable law. Previously transmitted Analytics and Crashlytics records are not necessarily deleted by the same account-deletion operation; contact us if you need assistance with a related data request.</p>
+<p><strong>Deleting a QRpybara account does not cancel an active Google Play subscription.</strong> To stop future charges, cancel that subscription separately through Google Play.</p>
 
 <h2>11. Children's Privacy</h2>
-<p>QRpybara is a general-purpose utility application and is not specifically designed for children. Users should comply with applicable age requirements for Google Play, purchases, and account services.</p>
+<p>QRpybara is a general-purpose utility app whose current intended audience is adults aged 18 and older. It is not directed to children. If you believe a child has provided personal information to us, please contact us so we can evaluate the appropriate response under applicable law.</p>
 
 <h2>12. International Users</h2>
 <p>QRpybara may be available in multiple countries and languages. Some third-party services may process information in countries other than the country where you live, subject to their own privacy practices and applicable legal requirements.</p>
